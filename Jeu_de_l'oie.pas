@@ -9,7 +9,12 @@ Algorithme:Jeu-de-l'oie
 //Principe:On lance le dé aléatoirement et déplace le joueur tout en respectant les règles écrites au dessus
 //Entrée:Un joueur souhaitant jouer seul au jeu de l'oie 
 //Sortie:Une partie joué/jouable par le joueur *
-
+CONST
+fin <--66;
+min <--2;
+pdbl <--63;
+mort <--58;
+alea <--13;
 
 VAR:
 jet,place:ENTIER
