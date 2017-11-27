@@ -46,6 +46,13 @@ DEBUT
 
 FIN }
 USES crt;
+CONST
+fin =66;
+min =2;
+pdbl =63;
+mort =58;
+alea =13;
+
 
 VAR
 	jet,place:INTEGER;
@@ -56,26 +63,26 @@ BEGIN
 	Readln();
 	place := 0;
 	jet:=0;
-	While (place <> 66) do
+	While (place <> fin) do
 		BEGIN
 			Writeln('Pressez entrer pour lancer les des.');
 			Readln();
 			Repeat
-			jet := random(13);//13 car il simule un entier entre 0 et n-1
-			UNTIL (jet >= 2);
+			jet := random(alea);//13 car il simule un entier entre 0 et n-1
+			UNTIL (jet >= min);
 			Writeln('Votre jet de des vaut: ',jet);
 			place := place+jet;
-			IF(place MOD 9 = 0) AND (place <> 63) THEN 
+			IF(place MOD 9 = 0) AND (place <> pdbl) THEN 
 				BEGIN 
 					Writeln('Vous etes tombe sur une case qui est multiple de 9 votre jet de das est double,votre jet de des vaut:  ',jet*2);
 					place:= place + jet ;
 				END;
-			if (place > 66) THEN// au cas ou le joueur dépasse la case 66 il recule de la différence entre sa position et la case 66 
+			if (place > fin) THEN// au cas ou le joueur dépasse la case 66 il recule de la différence entre sa position et la case 66 
 				BEGIN
-					place:=66-(place-66);
+					place:=fin-(place-fin);
 					Writeln('Vous avez depasse la case 66 vous reculez et vous retrouvez a la case ',place);
 				END;
-			if (place = 58 ) THEN
+			if (place = mort ) THEN
 				BEGIN
 					Writeln('Vous etes tombe sur la case 58 , retournez a la case depart.');
 					place:=0;
